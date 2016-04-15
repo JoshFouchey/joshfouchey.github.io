@@ -1,0 +1,137 @@
+<html>
+        <head>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+                <title>start</title>
+                <link rel="shortcut icon" type="image/gif" href="<!--INSERT IMG URL HERE>-->" />
+                <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
+                <style type="text/css">
+                                body {
+                        background : #ffffff;
+                        background : radial-gradient(ellipse at center, #ffffff 0%, #eee 100%);
+                        background : -moz-radial-gradient(#eee, #fff);
+                        }
+                        .keepcentered {
+                        position : absolute;
+                        left : 50%;
+                        top : 50%;
+                        width : 480px;
+                        height : 300px;
+                        margin-left : -240px;
+                        margin-top : -150px;
+                        font-weight : 100;
+                        }
+                        body {
+                        font-family: 'Roboto', sans-serif;
+                        font-style : normal;
+                        color : #258bbc;
+                        margin : 5px;
+                        }
+                        td, tr {
+                        width: 20%;
+                        text-align: center;
+                        }
+                        a {
+                        font-weight: 100;
+                        color : #aebac1;
+                        }
+                        a:hover{
+                        color: #5a83c4;
+                        }
+                        a:link {
+                        text-decoration : none;
+                        text-shadow: 0px 0px 0px #000;
+                        }
+</style>
+        </head>
+
+        <body onload="pageSetup()">
+                <div class="keepcentered">
+                        <center><font size=72><div id="time"></div></font></center>
+                        <p><center>
+                        <table width="100%" border="0px">
+                                <tr>
+                                        <td>Favorites</td>
+                                        <td>Google</td>
+                                        <td>Coding</td>
+                                        <td>Other</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://www.reddit.com">Reddit</a></td>
+                                    <td><a href="http://www.google.com">Search</a></td>
+                                    <td><a href="http://www.codepen.com">Codepen</a></td>
+                                </tr>
+                                <tr>
+                                  <td><a href="http://www.reddit.com">Reddit</a></td>
+                                  <td><a href="http://www.gmail.com">Gmail</a></td>
+                                  <td><a href="https://dribbble.com/">Dribbble</a></td>
+                                </tr>
+
+                                <tr>
+                                <td><a href="http://www.reddit.com">Reddit</a></td>
+                                <td><a href="http://www.https://drive.google.com/drive/my-drive.com">Drive</a></td>
+
+                                </tr>
+
+                                <tr>
+                                <td><a href="http://www.reddit.com">Reddit</a></td>
+                                <td><a href="http://www.youtube.com">Youtube</a></td>
+                                </tr>
+                        </table>
+                        <br>
+                        <p id="weather">Here's the weather:<p>
+                        </center>
+                </p>
+</div>
+        </body>
+
+        <script>
+        var lati;
+        var longi;
+                function pageSetup(){
+                  updateClock();
+                  var x = '7510998e34b56c2c3edab3e014703562';
+                  var url = 'https://api.forecast.io/forecast/';
+                  var lati = position.coords.latitude;
+                  var longi = position.coords.longitude;
+                  var data;
+
+                  $.getJSON(url + x + "/" + lati + "," + longi + "?callback=?", function(data) {
+                    //console.log(data);
+                    $('#weather').html('and the temperature is: ' + data.currently.temperature);
+                  });
+                }
+                function updateClock()
+                {
+                        Date.getMinutesTwoDigits = function()
+                        {
+                                var retval = now.getMinutes();
+                                if (retval < 10) return ("0" + retval.toString());
+                                else return retval.toString();
+                        }
+                        Date.getHoursModTwelve = function()
+                        {
+                                var retval = now.getHours();
+                                retval = retval%12;
+                                if (retval == 0) retval = 12;
+                                return retval;
+                        }
+                        var now = new Date(),
+                        time = Date.getHoursModTwelve() + ':' + Date.getMinutesTwoDigits();
+                        document.getElementById('time').innerHTML = ["", time].join('');
+                        setTimeout(updateClock, 1000);
+                }
+                function getLocation() {
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(showPosition);
+                    } else {
+                        x.innerHTML = "Geolocation is not supported by this browser.";
+                    }
+                }
+
+                function showPosition(position) {
+                    lati = position.coords.latitude;
+                    longi =position.coords.longitude;
+                }
+
+        </script>
+</html>
