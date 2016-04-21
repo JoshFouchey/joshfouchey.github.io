@@ -78,7 +78,7 @@
                                 </tr>
                         </table>
                         <br>
-                        <p id="weather">Here's the weather:<p>
+                        <p id="weather"><p>
                         </center>
                 </p>
 </div>
@@ -130,7 +130,7 @@
 
                   $.getJSON(url + x + "/" + lati + "," + longi + "?callback=?", function(data) {
                     //console.log(data);
-                    $('#weather').html('and the temperature is: ' + data.currently.temperature);
+                    $('#weather').html(data.currently.summary +' ' + data.currently.temperature + '&deg;');
                   });
                 }
 
