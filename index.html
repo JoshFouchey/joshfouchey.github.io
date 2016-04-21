@@ -85,19 +85,9 @@
         </body>
 
         <script>
-        var lati;
-        var longi;
                 function pageSetup(){
                   updateClock();
                   getLocation();
-                  var x = '7510998e34b56c2c3edab3e014703562';
-                  var url = 'https://api.forecast.io/forecast/';
-                  var data;
-
-                  $.getJSON(url + x + "/" + lati + "," + longi + "?callback=?", function(data) {
-                    //console.log(data);
-                    $('#weather').html('and the temperature is: ' + data.currently.temperature);
-                  });
                 }
                 function updateClock()
                 {
@@ -128,8 +118,20 @@
                 }
 
                 function showPosition(position) {
-                    lati = position.coords.latitude;
-                    longi =position.coords.longitude;
+                  var lati = position.coords.latitude;
+                  var longi =position.coords.longitude;
+                  updateWeather(lati,logi);
+                }
+
+                function updateWeather(lati, longi){
+                  var x = '7510998e34b56c2c3edab3e014703562';
+                  var url = 'https://api.forecast.io/forecast/';
+                  var data;
+
+                  $.getJSON(url + x + "/" + lati + "," + longi + "?callback=?", function(data) {
+                    //console.log(data);
+                    $('#weather').html('and the temperature is: ' + data.currently.temperature);
+                  });
                 }
 
         </script>
