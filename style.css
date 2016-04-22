@@ -1,0 +1,36 @@
+body {
+background : #ffffff;
+background : radial-gradient(ellipse at center, #ffffff 0%, #eee 100%);
+background : -moz-radial-gradient(#eee, #fff);
+}
+.keepcentered {
+position : absolute;
+left : 50%;
+top : 50%;
+width : 480px;
+height : 300px;
+margin-left : -240px;
+margin-top : -150px;
+font-weight : 100;
+}
+body {
+font-family: 'Roboto', sans-serif;
+font-style : normal;
+color : #258bbc;
+margin : 5px;
+}
+td, tr {
+width: 20%;
+text-align: center;
+}
+a {
+font-weight: 100;
+color : #aebac1;
+}
+a:hover{
+color: #5a83c4;
+}
+a:link {
+text-decoration : none;
+text-shadow: 0px 0px 0px #000;
+}
