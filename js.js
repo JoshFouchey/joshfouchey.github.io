@@ -44,6 +44,5 @@ function updateWeather(lati, longi){
   $.getJSON(url + x + "/" + lati + "," + longi + "?callback=?", function(data) {
     //console.log(data);
     $('#weather').html(data.currently.summary +' ' + data.currently.temperature + '&deg;');
-    document.getElementById('sunny').element.style.display = 'none';
   });
 }
