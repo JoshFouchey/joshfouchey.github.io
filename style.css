@@ -835,7 +835,6 @@ text-shadow: 0px 0px 0px #000;
 	-webkit-transform: scale(.9);
 	        transform: scale(.9);
 	width: 1200px;
-	position: absolute;
 	height: 210px;
 	left: 50%;
 	top: 50%;
