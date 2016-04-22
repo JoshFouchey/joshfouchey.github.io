@@ -43,7 +43,6 @@ function updateWeather(lati, longi){
 
   $.getJSON(url + x + "/" + lati + "," + longi + "?callback=?", function(data) {
     //console.log(data);
-    var summary = data.currently.summary;
-    $('#temperature').html(data.currently.temperature + '&deg;');
+    $('#weather').html(data.currently.summary +' ' + data.currently.temperature + '&deg;');
   });
 }
