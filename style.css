@@ -34,3 +34,49 @@ a:link {
 text-decoration : none;
 text-shadow: 0px 0px 0px #000;
 }
+
+/* CLOUDY */
+.cloudy {
+	animation: cloudy 5s ease-in-out infinite;
+	background: #FFFFFF;
+	border-radius: 50%;
+	box-shadow:
+		#FFFFFF 65px -15px 0 -5px,
+		#FFFFFF 25px -25px,
+		#FFFFFF 30px 10px,
+		#FFFFFF 60px 15px 0 -10px,
+		#FFFFFF 85px 5px 0 -5px;
+	height: 50px;
+	width: 50px;
+	margin-left: -60px;
+	position: absolute;
+	left: 255px;
+	top: 70px;
+}
+.cloudy:after {
+	animation: cloudy_shadow 5s ease-in-out infinite;
+	background: #000000;
+	border-radius: 50%;
+	content: '';
+	height: 15px;
+	width: 120px;
+	opacity: 0.2;
+	position: absolute;
+	left: 5px;
+	bottom: -60px;
+  transform: scale(.7);
+}
+@keyframes cloudy {
+	50% { transform: translateY(-20px); }
+}
+@keyframes cloudy_shadow {
+	50% { transform: translateY(20px) scale(1); opacity:.05; }
+}
+.containerDay {
+	background: #2EB5E5;
+	transform: scale(.9);
+	width: 500px;
+	height: 210px;
+	left: 50%;
+	top: 50%;
+}
