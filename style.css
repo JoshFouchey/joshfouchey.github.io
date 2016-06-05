@@ -72,11 +72,12 @@ text-shadow: 0px 0px 0px #000;
 @keyframes cloudy_shadow {
 	50% { transform: translateY(20px) scale(1); opacity:.05; }
 }
-.containerDay {
+.cloudContainer {
 	background: #2EB5E5;
 	transform: scale(.9);
 	width: 500px;
 	height: 210px;
 	left: 50%;
 	top: 50%;
+  display:none;
 }

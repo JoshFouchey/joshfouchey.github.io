@@ -44,5 +44,9 @@ function updateWeather(lati, longi){
   $.getJSON(url + x + "/" + lati + "," + longi + "?callback=?", function(data) {
     //console.log(data);
     $('#weather').html(data.currently.summary +' ' + data.currently.temperature + '&deg;');
+    if(data.currently.icon === "partly-cloudy-night"){
+        $('#cloudContainer').css("display", "block");
+        $('#cloudContainer').css("background-color", "#3D3D3D");
+    }
   });
 }
