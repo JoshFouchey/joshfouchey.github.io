@@ -48,5 +48,8 @@ function updateWeather(lati, longi){
         $('#cloudContainer').css("display", "block");
         $('#cloudContainer').css("background-color", "#3D3D3D");
     }
+    if(data.currently.icon === "clear-day"){
+        $('#sunContainer').css("display", "block");
+    }
   });
 }
