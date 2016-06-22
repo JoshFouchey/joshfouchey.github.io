@@ -54,5 +54,8 @@ function updateWeather(lati, longi){
     if(data.currently.icon === "partly-cloudy-day"){
       $('#cloudContainer').css("display", "block");
     }
+    if(data.currently.icon === "rain"){
+      $('#rainContainer').css("display", "block");
+    }
   });
 }
