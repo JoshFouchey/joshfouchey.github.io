@@ -45,18 +45,5 @@ function updateWeather(lati, longi){
     //console.log(data);
     $('#weather').html(data.currently.summary +' ' + data.currently.temperature + '&deg;');
       $('#windSpeed').html('Wind Speed: ' + data.currently.windSpeed);
-    if(data.currently.icon === "partly-cloudy-night"){
-        $('#cloudContainer').css("display", "block");
-        $('#cloudContainer').css("background-color", "#3D3D3D");
-    }
-    if(data.currently.icon === "clear-day"){
-        $('#sunContainer').css("display", "block");
-    }
-    if(data.currently.icon === "partly-cloudy-day"){
-      $('#cloudContainer').css("display", "block");
-    }
-    if(data.currently.icon === "rain"){
-      $('#rainContainer').css("display", "block");
-    }
   });
 }
