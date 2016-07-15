@@ -1,3 +1,8 @@
+@font-face {
+    font-family: nexa;
+    src: url(NexaLight.otf);
+}
+
 body {
 background : #ffffff;
 background : radial-gradient(ellipse at center, #ffffff 0%, #eee 100%);
