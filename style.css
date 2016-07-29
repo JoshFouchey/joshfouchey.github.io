@@ -39,3 +39,9 @@ a:link {
 text-decoration : none;
 text-shadow: 0px 0px 0px #000;
 }
+td.linkHeader {
+    padding-bottom: 10px;
+}
+.fa{
+padding-top: 3px;
+}
