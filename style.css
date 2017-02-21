@@ -1,3 +1,6 @@
+html {
+    background-color: white;
+}
 @font-face {
     font-family: nexa;
     src: url(NexaLight.otf);
