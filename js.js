@@ -1,6 +1,7 @@
 function pageSetup(){
   updateClock();
   getLocation();
+  updateDate();
 }
 function updateClock()
 {
@@ -21,6 +22,15 @@ function updateClock()
         time = Date.getHoursModTwelve() + ':' + Date.getMinutesTwoDigits();
         document.getElementById('time').innerHTML = ["", time].join('');
         setTimeout(updateClock, 1000);
+}
+function updateDate(){
+  var monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+  ];
+    var today = new Date();
+    document.getElementById('date').innerHTML = monthNames[today.getMonth()] + ' ' + today.getDate() + ',' + ' ' + today.getFullYear();
+
+
 }
 function getLocation() {
     if (navigator.geolocation) {
