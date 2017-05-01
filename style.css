@@ -16,6 +16,7 @@ background : -moz-radial-gradient(#eee, #fff);
 }
 .date{
   font-size:1em;
+  margin-bottom: 5%;
 }
 .keepcentered {
 position : absolute;
